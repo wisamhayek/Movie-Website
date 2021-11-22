@@ -1,3 +1,10 @@
+/* Background Image */
+body {
+    background-image: url('/Users/wisam/Desktop/Develop/Movie Website/assets/img/background-all.jpg');
+    background-size: cover;
+    background-attachment: fixed; 
+  }
+
 /* Header Section */
 header {
     width: 100%;
@@ -36,3 +43,8 @@ header {
     font-weight: bold;
 }
 /* End Header Section */
+
+/* Start Section Body  */
+h1 {
+    position:fixed 100px 100px;
+}
