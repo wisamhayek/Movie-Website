@@ -5,7 +5,7 @@ let popSeries = []
 let topSeries = []
 let topMovies = []
 
-// var img = document.createElement("img");
+//Fetch Popular Movies for home page
 const fetchPopMovie = () => {
     fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_Key}&page=1`).then(response => {
                     if(response.status !== 200) { // I got some error
@@ -39,6 +39,7 @@ const fetchPopMovie = () => {
                 })
         }
 
+    //Fetch popular TV shows for home page
 const fetchPopTV = () => {
     fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_Key}&page=1`).then(response => {
                     if(response.status !== 200) { // I got some error
@@ -74,7 +75,7 @@ const fetchPopTV = () => {
                 })
         }
 
-
+//Function for onClick Button to take the ID of the title
     const choseTitle=(id)=>{
         localStorage.setItem('chosenMovieID',id);
 
@@ -82,6 +83,8 @@ const fetchPopTV = () => {
 
 const chosenID = localStorage.getItem('chosenMovieID');
 
+
+//Fetch specific Movie for movie page and details
 const fetchMovie = () => {
     fetch(`https://api.themoviedb.org/3/movie/${chosenID}?api_key=${API_Key}&append_to_response=credits`).then(response => {
         if(response.status !== 200) { // I got some error
@@ -133,6 +136,7 @@ const fetchMovie = () => {
     })
 }
 
+//Fetch specific Movie for movie page and details
 const fetchTV = () => {
     fetch(`https://api.themoviedb.org/3/tv/${chosenID}?api_key=${API_Key}&append_to_response=credits`).then(response => {
         if(response.status !== 200) { // I got some error
@@ -183,7 +187,7 @@ const fetchTV = () => {
     })
 }
 
-
+//Fetch top rated TV shows for top page
 const fetchTopTV = () => {
     fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${API_Key}&page=1`).then(response => {
                     if(response.status !== 200) { // I got some error
@@ -219,6 +223,7 @@ const fetchTopTV = () => {
     })
 }
 
+//Fetch top rated Movies for top page
 const fetchTopMovies = () => {
     fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_Key}&page=1`).then(response => {
                     if(response.status !== 200) { // I got some error
